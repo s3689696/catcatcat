@@ -1,28 +1,31 @@
+html, body, #reactapp, .App {
+  height: 100%;
+}
+
 .App {
-  text-align: center;
+  flex-flow: column nowrap;
+  height: 100vh;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.Header {
+  flex: 0 0 50px;
+  background-color: hsl(0, 0%, 95%);
+  box-shadow: 0 2px 2px lightgray;
+  padding: 1em 2em;
+  display: flex;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.Sidemenu-heading {
+
 }
 
-.App-title {
-  font-size: 1.5em;
+.Main {
+  flex: 1 1 auto;
+  padding: 1em 2em;
 }
 
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+@media all {
+  .App { display: flex}
+  .Sidemenu { order: 1 }
+  .Main { order: 2 }
 }
