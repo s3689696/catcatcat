@@ -7,13 +7,11 @@ export class Header extends React.Component {
     render() {
         return (
             <div className="Header">
-                <div className="Header-buttons">
-                    <button><FontAwesomeIcon icon={faHome}/></button>
-                    <button><FontAwesomeIcon icon={faFolder}/></button>
+                <div className="Header-btns">
+                    <FontAwesomeIcon className="Header-btn" icon={faHome} size="lg"/>
+                    <FontAwesomeIcon className="Header-btn" icon={faFolder} size="lg"/>
                 </div>
-                <div className="Header-title">
-                    <h1>CatCatCat</h1>
-                </div>
+                <h1 className="Title">CatCatCat</h1>
             </div>
         )
     }
