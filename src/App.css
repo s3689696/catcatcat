@@ -24,7 +24,13 @@ html, body, #reactapp, .App {
 }
 
 .Title {
-  margin: auto 40vw auto 40vw;
+  margin: auto;
+}
+
+.Title > * {
+  display: inline-block;
+  margin: auto 0;
+  vertical-align: middle;
 }
 
 .Header-btn, .Title {
@@ -34,6 +40,20 @@ html, body, #reactapp, .App {
 .Main {
   flex: 1 1 auto;
   padding: 1em 2em;
+}
+
+.add-folder-btn{
+  background-color: hsl(30, 70%, 50%); 
+  border: none;
+  color: white;
+  padding: 30px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.add-folder-btn:hover {
+  background-color: hsl(30, 70%, 70%); 
 }
 
 @media all {

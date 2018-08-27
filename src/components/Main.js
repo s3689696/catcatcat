@@ -1,12 +1,11 @@
 import React from 'react'
+import {Cabinet} from './Cabinet'
 
 export class Main extends React.Component {
     render() {
         return (
             <div className="Main">
-                <div className="Main-heading">
-                    <h1>Folders</h1>
-                </div>
+                <Cabinet />
                 <div className="Main-options">
                 </div>
             </div>
