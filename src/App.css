@@ -9,14 +9,26 @@ html, body, #reactapp, .App {
 
 .Header {
   flex: 0 0 50px;
-  background-color: hsl(0, 0%, 95%);
+  background-color: hsl(30, 70%, 50%);
   box-shadow: 0 2px 2px lightgray;
-  padding: 1em 2em;
+  padding: 5px 1px;
   display: flex;
 }
 
-.Sidemenu-heading {
+.Header-btn {
+  background-color: hsl(30, 70%, 70%);
+  padding: 15px 0;
+  min-width: 50px;
+  border-radius: 5px;
+  margin: 0 3px;
+}
 
+.Title {
+  margin: auto 40vw auto 40vw;
+}
+
+.Header-btn, .Title {
+  color: white;
 }
 
 .Main {
@@ -26,6 +38,6 @@ html, body, #reactapp, .App {
 
 @media all {
   .App { display: flex}
-  .Sidemenu { order: 1 }
+  .Header { order: 1 }
   .Main { order: 2 }
 }
