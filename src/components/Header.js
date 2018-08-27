@@ -11,7 +11,10 @@ export class Header extends React.Component {
                     <FontAwesomeIcon className="Header-btn" icon={faHome} size="lg"/>
                     <FontAwesomeIcon className="Header-btn" icon={faFolder} size="lg"/>
                 </div>
-                <h1 className="Title">CatCatCat</h1>
+                <div className="Title">
+                    <img src={require('../cat.svg')} alt="cat logo" height="50px" width="50px"/>
+                    <h1>CatCatCat</h1>
+                </div>
             </div>
         )
     }
