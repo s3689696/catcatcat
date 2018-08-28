@@ -1,4 +1,4 @@
-import { CREATE_FOLDER } from '../actions/actions';
+import { combineReducers } from 'redux';
 
 const initialState = {
     folders: []
@@ -6,7 +6,7 @@ const initialState = {
 
 function handleFolders(state = initialState, action) {
     switch(action.type) {
-        case CREATE_FOLDER:
+        case 'CREATE_FOLDER':
             return {
                 ...state, folders: [
                     ...state.folders,
@@ -20,4 +20,8 @@ function handleFolders(state = initialState, action) {
     }
 }
 
-export default handleFolders;
+let rootReducer = combineReducers({
+    handleFolders
+})
+
+export default rootReducer;
