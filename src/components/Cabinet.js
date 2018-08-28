@@ -1,22 +1,12 @@
-import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { connect } from 'react-redux';
+import Folders from './Folders';
 
-export class Cabinet extends React.Component {
+const mapStateToProps = ({handleFolders: {folders}}) => ({
+    folders
+});
 
-    createFolder() {
-        
-    }
+const Cabinet = connect(
+    mapStateToProps
+)(Folders);
 
-    render() {
-        return (
-            <div className="Cabinet">
-                <h2>Folders</h2>
-                <button className="add-folder-btn" onClick={this.createFolder}>
-                    <FontAwesomeIcon icon={faPlus} size="4x"/>
-                </button>
-                    
-            </div>
-        )
-    }
-}
+export default Cabinet;

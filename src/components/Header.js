@@ -6,12 +6,12 @@ import { faFolder } from '@fortawesome/free-solid-svg-icons';
 export class Header extends React.Component {
     render() {
         return (
-            <div className="Header">
-                <div className="Header-btns">
-                    <FontAwesomeIcon className="Header-btn" icon={faHome} size="lg"/>
-                    <FontAwesomeIcon className="Header-btn" icon={faFolder} size="lg"/>
+            <div className="header">
+                <div className="header__btns">
+                    <FontAwesomeIcon className="header__btn" icon={faHome} size="lg"/>
+                    <FontAwesomeIcon className="header__btn" icon={faFolder} size="lg"/>
                 </div>
-                <div className="Title">
+                <div className="header__title">
                     <img src={require('../cat.svg')} alt="cat logo" height="50px" width="50px"/>
                     <h1>CatCatCat</h1>
                 </div>
