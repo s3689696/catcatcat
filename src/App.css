@@ -7,13 +7,13 @@ html, body, #reactapp, .App {
   height: 100vh;
 }
 
-.coloured {
-  background-color: hsl(258, 50%, 46%);
+.simple-btn, .newfolder-input__btn, .header {
+  background-color: #5e3bb0;
   color: white;
 }
 
-.coloured--light {
-  background-color: hsl(261, 62%, 62%);
+.simple-btn:hover, .newfolder-input__btn:hover, .header__btn {
+  background-color: #8c62da;
   color: white;
 }
 
@@ -55,21 +55,16 @@ html, body, #reactapp, .App {
   align-items: center;
 }
 
-.newfolder-input__btn{
+.newfolder-input__btn {
   border: none;
-  color: white;
   padding: 30px 32px;
   text-align: center;
   text-decoration: none;
 }
 
-.newfolder-input__btn:hover {
-  background-color: hsl(261, 62%, 62%);
-}
-
 .newfolder-input {
-  background-color: hsl(0, 0%, 100%);
-  box-shadow: 1px 1px 5px hsl(0, 0%, 70%);
+  background-color: white;
+  box-shadow: 1px 1px 5px #b3b3b3;
   border-radius: 5px;
 }
 
@@ -80,14 +75,9 @@ html, body, #reactapp, .App {
 
 .simple-btn {
   border: none;
-  color: white;
   padding: 5px;
   border-radius: 5px;
   margin: 0 0 0 10px;
-}
-
-.simple-btn:hover{
-  background-color: hsl(30, 70%, 45%);
 }
 
 .folder {
@@ -97,7 +87,17 @@ html, body, #reactapp, .App {
 }
 
 @media all {
-  .App { display: flex}
-  .Header { order: 1 }
-  .Main { order: 2 }
+  .App {
+    display: flex;
+  }
+
+  .Header {
+    order: 1;
+  }
+
+  .Main {
+    order: 2;
+  }
 }
+
+/*# sourceMappingURL=App.css.map */
