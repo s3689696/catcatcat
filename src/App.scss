@@ -1,0 +1,108 @@
+$primary-color: hsl(258, 50%, 46%);
+$primary-color--light: hsl(261, 62%, 62%);
+
+html, body, #reactapp, .App {
+    height: 100%;
+  }
+  
+  .app {
+    flex-flow: column nowrap;
+    height: 100vh;
+  }
+  
+  %coloured {
+    background-color: $primary-color;
+    color: white;
+  }
+  
+  %coloured--light {
+    background-color: $primary-color--light;
+    color: white;
+  }
+  
+  .header {
+    @extend %coloured;
+    flex: 0 0 50px;
+    box-shadow: 0 2px 2px lightgray;
+    padding: 5px 1px;
+    display: flex;
+  }
+  
+  .header__btn {
+    @extend %coloured--light;
+    padding: 15px 0;
+    min-width: 50px;
+    border-radius: 5px;
+    margin: 0 3px;
+  }
+  
+  .header__title {
+    margin: auto;
+  }
+  
+  .header__title > * {
+    display: inline-block;
+    margin: auto 0;
+    vertical-align: middle;
+  }
+  
+  .header__btn, .header__title {
+    color: white;
+  }
+  
+  .main {
+    flex: 1 1 auto;
+    padding: 1em 2em;
+  }
+  
+  .drawer {
+    display: flex;
+    align-items: center;
+  }
+  
+  .newfolder-input__btn{
+    @extend %coloured;
+    border: none;
+    padding: 30px 32px;
+    text-align: center;
+    text-decoration: none;
+  }
+  
+  .newfolder-input__btn:hover {
+    @extend %coloured--light;
+  }
+  
+  .newfolder-input {
+    background-color: hsl(0, 0%, 100%);
+    box-shadow: 1px 1px 5px hsl(0, 0%, 70%);
+    border-radius: 5px;
+  }
+  
+  .newfolder-input__panel {
+    display: inline-block;
+    margin: 15px;
+  }
+  
+  .simple-btn {
+    @extend %coloured;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 0 0 0 10px;
+  }
+  
+  .simple-btn:hover{
+    @extend %coloured--light;
+  }
+  
+  .folder {
+    padding: 0 30px 0 0;
+    text-align: center;
+    color: black;
+  }
+  
+  @media all {
+    .App { display: flex}
+    .Header { order: 1 }
+    .Main { order: 2 }
+  }
