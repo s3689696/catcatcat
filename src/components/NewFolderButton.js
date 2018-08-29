@@ -37,7 +37,7 @@ class NewFolderButton extends React.Component {
         return(
             <div className="newfolder-input" ref={ node => {this.node = node;}}>
                 {!this.state.isClicked && (
-                <button className="newfolder-input__btn" onClick={this.handleClick} >
+                <button className="newfolder-input__btn coloured" onClick={this.handleClick} >
                     <FontAwesomeIcon icon={faPlus} size="4x"/>
                 </button>
                 )}
@@ -54,7 +54,7 @@ class NewFolderButton extends React.Component {
                                 value={this.state.value}
                                 autoFocus 
                                 placeholder="Enter folder name" />
-                            <input type="submit" className="simple-btn" value="Add Folder"/>
+                            <input type="submit" className="simple-btn coloured" value="Add Folder"/>
                         </form>
                     </div>
                 )}
