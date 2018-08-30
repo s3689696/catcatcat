@@ -9,7 +9,6 @@ class FolderDisplay extends React.Component {
                 <h2>FolderName</h2>
                 <div className="websites">
                     <Website />
-                    <NewFolderButton /> 
                 </div>
             </div>
         )
