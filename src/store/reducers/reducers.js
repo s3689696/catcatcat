@@ -11,10 +11,22 @@ function handleFolders(state = initialState, action) {
                 ...state, folders: [
                     ...state.folders,
                     {
-                        name: action.name
+                        id: action.id,
+                        name: action.name,
+                        selected: false
                     }
                 ]
             }
+        case 'SELECT_FOLDER':
+            return {
+                ...state, folders: [
+                ...state.folders.map(folder => 
+                (folder.id === action.id)
+                ? {...folder, selected: !folder.selected}
+                : {...folder, selected: false}
+                )
+            ]
+        }
         default:
             return state;
     }

@@ -115,6 +115,11 @@ html, body, #reactapp, .App {
     text-align: center;
     color: black;
   }
+
+  .folder--selected {
+    @extend .folder;
+    color: $primary-color--light;
+  }
   
   @media all {
     .App { display: flex}

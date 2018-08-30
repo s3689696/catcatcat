@@ -91,10 +91,14 @@ html, body, #reactapp, .App {
   margin: 0 0 0 10px;
 }
 
-.folder {
+.folder, .folder--selected {
   padding: 0 30px 0 0;
   text-align: center;
   color: black;
+}
+
+.folder--selected {
+  color: #8c62da;
 }
 
 @media all {
