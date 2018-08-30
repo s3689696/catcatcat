@@ -1,5 +1,8 @@
 $primary-color: hsl(258, 50%, 46%);
 $primary-color--light: hsl(261, 62%, 62%);
+$color-neutral: hsl(0, 0%, 95%);
+$color-white: hsl(0, 0%, 100%);
+
 
 html, body, #reactapp, .App {
     height: 100%;
@@ -18,6 +21,11 @@ html, body, #reactapp, .App {
   %coloured--light {
     background-color: $primary-color--light;
     color: white;
+  }
+
+  %coloured--white {
+    background-color: $color-white;
+    color: black;
   }
   
   .header {
@@ -52,35 +60,42 @@ html, body, #reactapp, .App {
   
   .main {
     flex: 1 1 auto;
-    padding: 1em 2em;
+  }
+
+  .folders {
+    box-shadow: inset 0 0 10px hsl(0, 0%, 70%);
+    background-color: $color-neutral;
+    padding: 10px 20px;
   }
   
   .drawer {
     display: flex;
     align-items: center;
+    height: 147px;
+    flex: row wrap;
   }
   
   .newfolder-input__btn{
     @extend %coloured;
     border: none;
-    padding: 30px 32px;
+    border-radius: 100%;
+    padding: 10px 12px;
     text-align: center;
     text-decoration: none;
+    box-shadow: 1px 1px 5px hsl(0, 0%, 70%);
+    margin: 0 15px;
   }
   
   .newfolder-input__btn:hover {
     @extend %coloured--light;
   }
   
-  .newfolder-input {
-    background-color: hsl(0, 0%, 100%);
+  .newfolder-input__panel {
+    @extend %coloured--white;
+    display: inline-block;
+    padding: 15px;
     box-shadow: 1px 1px 5px hsl(0, 0%, 70%);
     border-radius: 5px;
-  }
-  
-  .newfolder-input__panel {
-    display: inline-block;
-    margin: 15px;
   }
   
   .simple-btn {

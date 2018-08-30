@@ -4,7 +4,7 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { connect } from 'react-redux'
 import { createFolder } from '../store/actions/actions'
 
-class NewFolderButton extends React.Component {
+class NewWebsiteButton extends React.Component {
     constructor() {
         super();
         this.state = {
@@ -38,7 +38,7 @@ class NewFolderButton extends React.Component {
             <div className="newfolder-input" ref={ node => {this.node = node;}}>
                 {!this.state.isClicked && (
                 <button className="newfolder-input__btn coloured" onClick={this.handleClick} >
-                    <FontAwesomeIcon icon={faPlus} size="4x"/>
+                    <FontAwesomeIcon icon={faPlus} size="3x"/>
                 </button>
                 )}
                 {this.state.isClicked && (
@@ -70,4 +70,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
     null,
     mapDispatchToProps
-)(NewFolderButton);
+)(NewWebsiteButton);
