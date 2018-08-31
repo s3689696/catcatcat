@@ -1,18 +1,13 @@
-import React from 'react';
-import NewFolderButton from './NewFolderButton';
-import Website from './Website';
+import { connect } from 'react-redux';
+import Websites from './Websites';
 
-class FolderDisplay extends React.Component {
-    render() {
-        return(
-            <div className="folder-display">
-                <h2>FolderName</h2>
-                <div className="websites">
-                    <Website />
-                </div>
-            </div>
-        )
-    }
-}
+const mapStateToProps = ({handleFolders: {websites, selectedFolder}}) => ({
+    websites,
+    selectedFolder
+});
+
+const FolderDisplay = connect(
+    mapStateToProps
+)(Websites)
 
 export default FolderDisplay;

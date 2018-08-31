@@ -1,45 +1,31 @@
 import React from 'react';
+import { getImageUrl } from '../utils'
 
 class Website extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
             image: null,
-            url: 'http://giantbomb.com'
         }
     }
 
     componentDidMount() {
-        fetch(this.state.url)
+        fetch(this.props.url)
         .then(response => response.text())
         .then(data => {
-            this.setState({ image: this.getImageUrl(data) })
+            this.setState({ image: getImageUrl(data) })
         });
 
     }
-        getImageUrl(text) {
-            var el = document.createElement( 'html' );
-            el.innerHTML = text;
-            console.log(el)
-            let nodeList = el.getElementsByTagName("link");
-            console.log(nodeList)
-            for (var i = 0; i < nodeList.length; i++)
-            {
-                if((nodeList[i].getAttribute("rel") === "apple-touch-icon-precomposed") || (nodeList[i].getAttribute("rel") === "apple-touch-icon")
-                    || (nodeList[i].getAttribute("rel") === "icon"))
-                {
-                    console.log(nodeList[i].getAttribute("href"));
-                    return (this.state.url + nodeList[i].getAttribute("href"));
-                }
-            }
-        }
+        
 
     render() {
 
         return(
             <div className="website">
-                {<img src={this.state.image}></img>}
-
+                <a href={this.props.url} target="_blank">
+                <img src={this.state.image} height='96px' width='96px'></img>
+                </a>
             </div>
         )
     }

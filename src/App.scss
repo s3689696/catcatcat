@@ -120,6 +120,21 @@ html, body, #reactapp, .App {
     @extend .folder;
     color: $primary-color--light;
   }
+
+  .folder-display {
+    padding: 10px 20px;
+  }
+
+  .websites {
+    display: flex;
+    align-items: center;
+  }
+
+  .website {
+    box-shadow: 1px 1px 5px hsl(0, 0%, 70%);
+    border-radius: 5px;
+    margin: 0 30px 0 0;
+  }
   
   @media all {
     .App { display: flex}

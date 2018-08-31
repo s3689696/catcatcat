@@ -13,14 +13,12 @@ class Folder extends React.Component {
     }
 
     handleClick() {
-        this.props.selectFolder(this.props.id)
+        this.props.selectFolder(this.props.id, this.props.name)
     }
-
-    
 
     render() {
         return (
-            <div className={checkSelected(this.props.selected)} onClick={this.handleClick}>
+            <div className={checkSelected(this.props.selected, this.props.id)} onClick={this.handleClick}>
                 <FontAwesomeIcon className="folder__icon" icon={faFolderOpen} size="6x"/>
                 <p>{this.props.name}</p>
             </div>
@@ -29,7 +27,7 @@ class Folder extends React.Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-    selectFolder: id => dispatch(selectFolder(id))
+    selectFolder: (id, name) => dispatch(selectFolder(id, name))
 })
 
 export default connect(

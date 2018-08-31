@@ -13,7 +13,7 @@ class Folders extends React.Component {
                             <Folder
                                 id={folder.id}
                                 name={folder.name}
-                                selected={folder.selected}
+                                selected={this.props.selectedFolder.id}
                             />
                         )
                     })}

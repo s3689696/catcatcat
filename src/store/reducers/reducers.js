@@ -1,7 +1,9 @@
 import { combineReducers } from 'redux';
 
 const initialState = {
-    folders: []
+    folders: [],
+    websites: [],
+    selectedFolder: {}
 }
 
 function handleFolders(state = initialState, action) {
@@ -12,21 +14,28 @@ function handleFolders(state = initialState, action) {
                     ...state.folders,
                     {
                         id: action.id,
-                        name: action.name,
-                        selected: false
+                        name: action.name
                     }
                 ]
             }
         case 'SELECT_FOLDER':
             return {
-                ...state, folders: [
-                ...state.folders.map(folder => 
-                (folder.id === action.id)
-                ? {...folder, selected: !folder.selected}
-                : {...folder, selected: false}
-                )
-            ]
-        }
+                ...state, selectedFolder: {
+                    id: action.id,
+                    name: action.name
+                }
+            }
+        case 'ADD_WEBSITE':
+            return {
+                ...state, websites: [
+                    ...state.websites,
+                    {   
+                        id: action.id,
+                        folder: action.folder,
+                        url: action.url
+                    }
+                ]
+            }
         default:
             return state;
     }

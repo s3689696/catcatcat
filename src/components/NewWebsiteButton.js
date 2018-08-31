@@ -2,9 +2,9 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { connect } from 'react-redux'
-import { createFolder } from '../store/actions/actions'
+import { addWebsite } from '../store/actions/actions'
 
-class NewFolderButton extends React.Component {
+class NewWebsiteButton extends React.Component {
     constructor() {
         super();
         this.state = {
@@ -45,7 +45,7 @@ class NewFolderButton extends React.Component {
                     <div className="newfolder-input__panel">
                         <form onSubmit={e => {
                             e.preventDefault()
-                            this.props.createFolder(this.textInput.value)
+                            this.props.addWebsite(this.textInput.value, this.props.selectedFolder.id)
                             this.handleClick();
                         }}
                         >
@@ -53,8 +53,8 @@ class NewFolderButton extends React.Component {
                                 type="text"
                                 value={this.state.value}
                                 autoFocus 
-                                placeholder="Enter folder name" />
-                            <input type="submit" className="simple-btn coloured" value="Add Folder"/>
+                                placeholder="Enter website url" />
+                            <input type="submit" className="simple-btn coloured" value="Add Website"/>
                         </form>
                     </div>
                 )}
@@ -63,11 +63,15 @@ class NewFolderButton extends React.Component {
     }
 }
 
+const mapStateToProps = ({handleFolders: {selectedFolder}}) => ({
+    selectedFolder
+});
+
 const mapDispatchToProps = dispatch => ({
-    createFolder: name => dispatch(createFolder(name))
+    addWebsite: (name, folder) => dispatch(addWebsite(name, folder))
 })
 
 export default connect(
-    null,
+    mapStateToProps,
     mapDispatchToProps
-)(NewFolderButton);
+)(NewWebsiteButton);
