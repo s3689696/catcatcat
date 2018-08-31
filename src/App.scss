@@ -57,6 +57,10 @@ html, body, #reactapp, .App {
   .header__btn, .header__title {
     color: white;
   }
+
+  .header__logo:hover {
+    content:url('cat--white.png');
+  }
   
   .main {
     flex: 1 1 auto;
