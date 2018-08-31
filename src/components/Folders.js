@@ -10,7 +10,11 @@ class Folders extends React.Component {
                 <div className="drawer">
                     {this.props.folders.map(folder => {
                         return(
-                            <Folder name={folder.name}/>
+                            <Folder
+                                id={folder.id}
+                                name={folder.name}
+                                selected={this.props.selectedFolder.id}
+                            />
                         )
                     })}
                     <NewFolderButton /> 

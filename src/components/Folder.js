@@ -1,12 +1,36 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFolderOpen } from '@fortawesome/free-solid-svg-icons';
+import { connect } from 'react-redux'
+import { selectFolder } from '../store/actions/actions'
+import { checkSelected } from '../utils'
 
-const Folder = ({ name }) => (
-    <div className="folder">
-        <FontAwesomeIcon className="folder__icon" icon={faFolderOpen} size="6x"/>
-        <p>{name}</p>
-    </div>
-)
+class Folder extends React.Component { 
+    constructor() {
+        super();
 
-export default Folder;
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    handleClick() {
+        this.props.selectFolder(this.props.id, this.props.name)
+    }
+
+    render() {
+        return (
+            <div className={checkSelected(this.props.selected, this.props.id)} onClick={this.handleClick}>
+                <FontAwesomeIcon className="folder__icon" icon={faFolderOpen} size="6x"/>
+                <p>{this.props.name}</p>
+            </div>
+        )
+    }
+}
+
+const mapDispatchToProps = dispatch => ({
+    selectFolder: (id, name) => dispatch(selectFolder(id, name))
+})
+
+export default connect(
+    null,
+    mapDispatchToProps
+)(Folder);
