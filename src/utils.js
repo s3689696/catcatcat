@@ -7,7 +7,7 @@ export function checkSelected(selected, id) {
     }
 }
 
-export function getImageUrl(text) {
+export function getImageUrl(text, url) {
     var Icon = new Image();
     var Img = new Image();
     var el = document.createElement( 'html' );
@@ -15,17 +15,24 @@ export function getImageUrl(text) {
     let nodeList = el.getElementsByTagName("link");
     for (var i = 0; i < nodeList.length; i++)
     {
-        if((nodeList[i].getAttribute("rel") === "apple-touch-icon-precomposed") || (nodeList[i].getAttribute("rel") === "apple-touch-icon")
-            || (nodeList[i].getAttribute("rel") === "shortcut icon") || (nodeList[i].getAttribute("rel") === "icon"))
+        if(((nodeList[i].getAttribute("rel") === "apple-touch-icon-precomposed") || (nodeList[i].getAttribute("rel") === "apple-touch-icon")
+            || (nodeList[i].getAttribute("rel") === "icon")))
         {   
             Img.src = nodeList[i].getAttribute("href");
-                console.log(Img.src)
-
             if(Icon.src === "") {
-                Icon.src = nodeList[i].getAttribute("href");
+                Icon.src = Img.src
+            }
+            
+            var isBigger = bigger(Img, Icon);
+
+            if(true){
+                Icon.src = Img.src
                 console.log(Icon.src)
             }
         }
+    }
+    if(!Icon.src.includes("https")) {
+        return (Icon.src)
     }
     return (Icon.src);
 }
@@ -39,6 +46,11 @@ export function getImageUrl(text) {
     }
 } */
 
+function bigger(img1, img2) {
+    let size1 = load(img1)
+    let size2 = load(img2)
+    return (size1 >= size2)
+}
 function load(theImage) {
     theImage.onload = function() {
         return theImage.naturalHeight
