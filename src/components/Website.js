@@ -13,7 +13,7 @@ class Website extends React.Component {
         fetch(this.props.url)
         .then(response => response.text())
         .then(data => {
-            this.setState({ image: getImageUrl(data) })
+            this.setState({ image: getImageUrl(data, this.props.url) })
         });
 
     }
